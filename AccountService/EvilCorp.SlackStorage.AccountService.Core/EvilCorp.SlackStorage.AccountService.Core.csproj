@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D2954002-A347-48D3-B944-17464539C2AC}</ProjectGuid>
+    <ProjectGuid>{54DC587F-A468-49EB-B42E-D16A96BED1E5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EvilCorp.SlackStorage.AccountService.Data</RootNamespace>
-    <AssemblyName>EvilCorp.SlackStorage.AccountService.Data</AssemblyName>
+    <RootNamespace>EvilCorp.SlackStorage.AccountService.Core</RootNamespace>
+    <AssemblyName>EvilCorp.SlackStorage.AccountService.Core</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,14 +41,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reposetories Interfaces\IUserReposetory.cs" />
-    <Compile Include="Reposetories\UserReposetory.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\AccountService\EvilCorp.AccountService.BusinessEntities\EvilCorp.AccountService.BusinessEntities.csproj">
-      <Project>{F7BC6137-D2EC-492B-8961-EC4230962D9F}</Project>
-      <Name>EvilCorp.AccountService.BusinessEntities</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
