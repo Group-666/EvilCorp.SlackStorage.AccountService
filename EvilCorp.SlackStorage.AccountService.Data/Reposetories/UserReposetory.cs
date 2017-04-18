@@ -12,7 +12,7 @@ namespace EvilCorp.SlackStorage.AccountService.Data.Reposetories
     {
         public string CreateUser(User user)
         {
-            return "token";
+            return "User is Created 200";
         }
     }
 }
