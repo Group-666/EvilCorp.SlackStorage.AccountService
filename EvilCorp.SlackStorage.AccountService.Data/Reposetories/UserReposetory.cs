@@ -12,7 +12,18 @@ namespace EvilCorp.SlackStorage.AccountService.Data.Reposetories
     {
         public string CreateUser(User user)
         {
-            return "User is Created 200";
+            AccountDBContext context = new AccountDBContext();
+            var saved_user = context.Users.Add(user);
+            context.SaveChanges();
+            if (saved_user.UserId != 0)
+            {
+                return saved_user.UserId.ToString();
+            }
+            else
+            {
+                return "User is not Saved";
+            }
+            
         }
     }
 }
