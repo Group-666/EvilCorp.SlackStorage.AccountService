@@ -14,7 +14,7 @@ namespace EvilCorp.SlackStorage.AccountService.Data.Reposetories
         {
             AccountDBContext context = new AccountDBContext();
             var saved_user = context.Users.Add(user);
-            context.SaveChanges();
+                             context.SaveChanges();
             if (saved_user.UserId != 0)
             {
                 return saved_user.UserId.ToString();
