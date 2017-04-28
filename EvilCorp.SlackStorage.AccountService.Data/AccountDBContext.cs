@@ -1,4 +1,5 @@
-﻿using EvilCorp.AccountService.BusinessEntities;
+﻿
+using EvilCorp.AccountService.ClientEntities;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;

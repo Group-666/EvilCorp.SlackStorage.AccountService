@@ -63,10 +63,6 @@
     <Compile Include="UserManager.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AccountService\EvilCorp.AccountService.BusinessEntities\EvilCorp.AccountService.BusinessEntities.csproj">
-      <Project>{F7BC6137-D2EC-492B-8961-EC4230962D9F}</Project>
-      <Name>EvilCorp.AccountService.BusinessEntities</Name>
-    </ProjectReference>
     <ProjectReference Include="..\AccountService\EvilCorp.AccountService.Contracts\EvilCorp.AccountService.Contracts.csproj">
       <Project>{CDEAF354-A069-44AD-9733-6B2AFF1E4646}</Project>
       <Name>EvilCorp.AccountService.Contracts</Name>

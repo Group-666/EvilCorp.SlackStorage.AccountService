@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <appSettings>
+    <loggingservice>
+      <add key="loguri" value="http://localhost:api/" />
+      <add key="log" value="log" />
+      </loggingservice>
+  </appSettings>
+</configuration>

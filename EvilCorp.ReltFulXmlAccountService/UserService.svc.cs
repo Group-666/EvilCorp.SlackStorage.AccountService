@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using EvilCorp.AccountService.ClientEntities;
+using EvilCorp.SlackStorage.AccountService.Data.Reposetories;
 
 namespace EvilCorp.ReltFulXmlAccountService
 {
@@ -12,14 +13,31 @@ namespace EvilCorp.ReltFulXmlAccountService
     // NOTE: In order to launch WCF Test Client for testing this service, please select UserService.svc or UserService.svc.cs at the Solution Explorer and start debugging.
     public class UserService : UserContrect
     {
+        UserReposetory repo = new UserReposetory();
         public string Login(string username, string password)
         {
-            return username + password;
+            return repo.Login(username, password);
         }
 
-        public string RegisterUser(string username, string password)
+        public String RegisterUser(string username, string password , string nickname)
         {
-            return username + password;
+            return repo.RegisterUser(username, password, nickname);
+        }
+        public string DisableUser(string username)
+        {
+            return repo.DisableUser(username);
+        }
+        public string EnableUser(string username)
+        {
+            return repo.EnableUser(username);
+        }
+        public string DeleteUser(string username)
+        {
+            return repo.DeleteUser(username);
+        }
+        public IEnumerable<User> GetAllUsers()
+        {
+            return repo.GetAllUsers();
         }
     }
 }
