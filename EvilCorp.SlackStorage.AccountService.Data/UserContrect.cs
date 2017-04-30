@@ -27,6 +27,8 @@ namespace EvilCorp.ReltFulXmlAccountService
         string DeleteUser(string username);
         [WebInvoke(Method = "GET", ResponseFormat = WebMessageFormat.Xml, BodyStyle = WebMessageBodyStyle.Wrapped, UriTemplate = "getalluser")]
         IEnumerable<User> GetAllUsers();
+        [WebInvoke(Method = "GET", ResponseFormat = WebMessageFormat.Xml, BodyStyle = WebMessageBodyStyle.Wrapped, UriTemplate = "getuser")]
+         Task<User> GetUser(string userid);
 
 
     }

@@ -68,6 +68,14 @@ namespace EvilCorp.SlackStorage.AccountService.Data.Reposetories
             return context.Users;
         }
 
+        public async Task<User>  GetUser(string userid)
+        {
+            if (userid != null)
+                return  await context.Users.FindAsync(userid);
+            else
+                throw new Exception("User not Found");
+        }
+
         public string Login(string userid, string password)
         {
             var user = context.Users.Where(x => x.UserId.ToString() == userid).FirstOrDefault();

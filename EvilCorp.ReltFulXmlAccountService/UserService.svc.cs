@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using System.Threading.Tasks;
 using EvilCorp.AccountService.ClientEntities;
 using EvilCorp.SlackStorage.AccountService.Data.Reposetories;
 
@@ -38,6 +39,14 @@ namespace EvilCorp.ReltFulXmlAccountService
         public IEnumerable<User> GetAllUsers()
         {
             return repo.GetAllUsers();
+        }
+
+        public Task<User> GetUser(string userid)
+        {
+            if (userid != null)
+                return repo.GetUser(userid);
+            else
+            throw new NotImplementedException();
         }
     }
 }

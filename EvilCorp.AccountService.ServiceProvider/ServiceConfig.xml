@@ -2,7 +2,7 @@
 <configuration>
   <appSettings>
     <loggingservice>
-      <add key="loguri" value="http://localhost:api/" />
+      <add key="loguri" value="http://localhost:53879/UserService.svc/" />
       <add key="log" value="log" />
       </loggingservice>
   </appSettings>
