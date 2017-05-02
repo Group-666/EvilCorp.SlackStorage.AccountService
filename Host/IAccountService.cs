@@ -20,7 +20,7 @@ namespace EvilCorp.AccountService
         Task<Account> Create(Account account);
 
         [OperationContract]
-        Task Delete(Account account);
+        Task Delete(Guid id);
 
         [OperationContract]
         Task<Account> Get(Guid id);
