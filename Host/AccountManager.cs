@@ -9,16 +9,36 @@ namespace Host
     {
         public async Task<IEnumerable<Account>> GetAll()
         {
-            await Task.Delay(0);
             return new List<Account>
             {
                 new Account
                 {
                     Id = Guid.NewGuid(),
                     Username = "Martin2",
-                    Password = "SIKKERSEX"
+                    Password = "SIKKERSEX",
+                    Nickname = "Martin3"
                 }
             };
+        }
+
+        public async Task<Account> Create(Account account)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task Delete(Account account)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<Account> Get(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task Update(Account account)
+        {
+            throw new NotImplementedException();
         }
     }
 }

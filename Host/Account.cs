@@ -10,6 +10,9 @@ namespace EvilCorp.AccountService
         public Guid Id { get; set; }
 
         [DataMember]
+        public string Nickname { get; set; }
+
+        [DataMember]
         public string Username { get; set; }
 
         [DataMember]
