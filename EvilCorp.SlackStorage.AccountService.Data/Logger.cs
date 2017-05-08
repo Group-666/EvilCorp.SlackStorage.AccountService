@@ -19,7 +19,7 @@ namespace EvilCorp.SlackStorage.AccountService.Data
                 throw new ArgumentException("The message cannot be null or empty.", nameof(message));
 
             var logEntry = CreateContent(message, logLevel);
-                logrepo.Log(logEntry);
+               // logrepo.Log(logEntry);
         }
 
 

@@ -10,12 +10,16 @@ using System.Threading.Tasks;
 
 namespace EvilCorp.ReltFulXmlAccountService
 {
-    [ServiceContract (Namespace = "http://localhost:53879/")]
+    [ServiceContract(Namespace = "")]
     public interface UserContrect 
     {
         [OperationContract]
-        [WebInvoke(Method = "POST", ResponseFormat = WebMessageFormat.Xml, BodyStyle = WebMessageBodyStyle.WrappedRequest, UriTemplate = "registeruser"), Description("add new user with complex object Emial and Password hash")]
-        String RegisterUser(string username, string password, string nickname);
+       // [ServiceKnownType(typeof(Test))]
+        [WebInvoke(Method = "POST", ResponseFormat = WebMessageFormat.Xml,  RequestFormat  = WebMessageFormat.Xml,BodyStyle = WebMessageBodyStyle.Wrapped, UriTemplate = "testuser")]
+        Test TestUser(Test test);
+        [OperationContract]
+        [WebInvoke(Method = "POST", ResponseFormat = WebMessageFormat.Xml, RequestFormat =WebMessageFormat.Xml, UriTemplate = "registeruser")]
+        String RegisterUser(User user);
         [OperationContract]
         [WebInvoke(Method = "GET", ResponseFormat = WebMessageFormat.Xml, BodyStyle = WebMessageBodyStyle.Wrapped, UriTemplate = "login/{userid}/{password}")]
         string Login(string userid , string password);
@@ -27,7 +31,7 @@ namespace EvilCorp.ReltFulXmlAccountService
         string DeleteUser(string username);
         [WebInvoke(Method = "GET", ResponseFormat = WebMessageFormat.Xml, BodyStyle = WebMessageBodyStyle.Wrapped, UriTemplate = "getalluser")]
         IEnumerable<User> GetAllUsers();
-        [WebInvoke(Method = "GET", ResponseFormat = WebMessageFormat.Xml, BodyStyle = WebMessageBodyStyle.Wrapped, UriTemplate = "getuser")]
+        [WebInvoke(Method = "GET", ResponseFormat = WebMessageFormat.Xml, BodyStyle = WebMessageBodyStyle.Wrapped, UriTemplate = "getuser/{userid}")]
          Task<User> GetUser(string userid);
 
 

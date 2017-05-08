@@ -20,9 +20,10 @@ namespace EvilCorp.ReltFulXmlAccountService
             return repo.Login(username, password);
         }
 
-        public String RegisterUser(string username, string password , string nickname)
+        public String RegisterUser(User user)
         {
-            return repo.RegisterUser(username, password, nickname);
+            return "posted";
+            // return repo.RegisterUser(username, password, nickname);
         }
         public string DisableUser(string username)
         {
@@ -47,6 +48,11 @@ namespace EvilCorp.ReltFulXmlAccountService
                 return repo.GetUser(userid);
             else
             throw new NotImplementedException();
+        }
+
+        public Test TestUser(Test test)
+        {
+            return  new Test { Name = test.Name, age = test.age};
         }
     }
 }

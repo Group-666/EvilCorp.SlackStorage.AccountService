@@ -87,18 +87,24 @@ namespace EvilCorp.SlackStorage.AccountService.Data.Reposetories
             return "User or password is not in database";
         }
 
-        public string RegisterUser(string username, string password, string nickname)
+        public string RegisterUser(User user)
         {
-            var user = new User() {NickName = nickname, UserName = username, Password = password };
+            //var user = new User() {NickName = nickname, UserName = username, Password = password };
 
-            var saveduser = context.Users.Add(user);
-            context.SaveChanges();
-            if (saveduser.UserId != null)
-            {
-                _loger.Log("Registerd user with id" + user.UserId.ToString(), LogLevel.Information);
-                return saveduser.UserId.ToString();
-            }
-            else { return " User is Not Created"; }
+            //var saveduser = context.Users.Add(user);
+            //context.SaveChanges();
+            //if (saveduser.UserId != null)
+            //{
+            //    _loger.Log("Registerd user with id" + user.UserId.ToString(), LogLevel.Information);
+            //    return saveduser.UserId.ToString();
+            //}
+            //else { return " User is Not Created"; }
+            return "user";
+        }
+
+        public Test TestUser(Test test)
+        {
+            throw new NotImplementedException();
         }
     }
 }
