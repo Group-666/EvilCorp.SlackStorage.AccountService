@@ -26,6 +26,11 @@ namespace Host
             throw new NotImplementedException();
         }
 
+        public async Task Delete(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task Delete(Account account)
         {
             throw new NotImplementedException();
