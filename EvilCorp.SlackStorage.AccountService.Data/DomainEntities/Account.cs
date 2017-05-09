@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace EvilCorp.SlackStorage.AccountService.Data.DomainEntities
 {
+    [DataContract]
     public class Account
     {
         [DataMember]

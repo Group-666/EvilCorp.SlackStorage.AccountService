@@ -14,7 +14,7 @@ namespace EvilCorp.SlackStorage.AccountService.Data.Reposetories_Interfaces
         Task<Account> Create(Account account);
         Task Delete(Guid id);
         Task<Account> Get(Guid id);
-
+        Task Delete(Account account);
         Task Update(Account account);
     }
 }

@@ -17,41 +17,32 @@ namespace Host
 
         public async Task<IEnumerable<Account>> GetAll()
         {
-            return new List<Account>
-            {
-                new Account
-                {
-                    Id = Guid.NewGuid(),
-                    Username = "Martin2",
-                    Password = "SIKKERSEX",
-                    Nickname = "Martin3"
-                }
-            };
+           return await _userrepo.GetAll();
         }
 
         public async Task<Account> Create(Account account)
         {
-            throw new NotImplementedException();
+          return   await _userrepo.Create(account);
         }
 
         public async Task Delete(Guid id)
         {
-            throw new NotImplementedException();
+           await _userrepo.Delete(id);
         }
 
         public async Task Delete(Account account)
         {
-            throw new NotImplementedException();
+            await _userrepo.Delete(account);
         }
 
         public async Task<Account> Get(Guid id)
         {
-            throw new NotImplementedException();
+            return await _userrepo.Get(id);
         }
 
         public async Task Update(Account account)
         {
-            throw new NotImplementedException();
+          await  _userrepo.Update(account);
         }
     }
 }

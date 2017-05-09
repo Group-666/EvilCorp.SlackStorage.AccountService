@@ -32,6 +32,12 @@ namespace EvilCorp.SlackStorage.AccountService.Data.Reposetories
             Save();
         }
 
+        public async Task Delete(Account account)
+        {
+            context.Accounts.Remove(account);
+            Save();
+        }
+
         public async Task<Account> Get(Guid id)
         {
             return await context.Accounts.FindAsync(id);
@@ -50,7 +56,7 @@ namespace EvilCorp.SlackStorage.AccountService.Data.Reposetories
 
         private async void Save()
         {
-            int x  = await context.SaveChangesAsync();
+            int x = await context.SaveChangesAsync();
         }
     }
 }
