@@ -7,13 +7,13 @@ namespace EvilCorp.SlackStorage.AccountService.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class ddd : IMigrationMetadata
+    public sealed partial class Account : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ddd));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Account));
         
         string IMigrationMetadata.Id
         {
-            get { return "201704221329350_ddd"; }
+            get { return "201705091646489_Account"; }
         }
         
         string IMigrationMetadata.Source

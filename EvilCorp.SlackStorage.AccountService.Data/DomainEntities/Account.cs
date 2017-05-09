@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace EvilCorp.AccountService
+namespace EvilCorp.SlackStorage.AccountService.Data.DomainEntities
 {
-    [DataContract]
     public class Account
     {
         [DataMember]

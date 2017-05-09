@@ -15,40 +15,76 @@ namespace EvilCorp.ReltFulXmlAccountService
     public class UserService : UserContrect
     {
         UserReposetory repo = new UserReposetory();
-        public string Login(string username, string password)
-        {
-            return repo.Login(username, password);
-        }
 
-        public String RegisterUser(User user)
-        {
-            return "posted";
-            // return repo.RegisterUser(username, password, nickname);
-        }
-        public string DisableUser(string username)
-        {
-            return repo.DisableUser(username);
-        }
-        public string EnableUser(string username)
-        {
-            return repo.EnableUser(username);
-        }
         public string DeleteUser(string username)
         {
-            return repo.DeleteUser(username);
+            throw new NotImplementedException();
         }
+
+        public string DisableUser(string username)
+        {
+            throw new NotImplementedException();
+        }
+
+        public string EnableUser(string username)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<User> GetAllUsers()
         {
-            return repo.GetAllUsers();
+            throw new NotImplementedException();
         }
 
         public Task<User> GetUser(string userid)
         {
-            if (userid != null)
-                return repo.GetUser(userid);
-            else
             throw new NotImplementedException();
         }
+
+        public string Login(string userid, string password)
+        {
+            throw new NotImplementedException();
+        }
+
+        public string RegisterUser(User user)
+        {
+            throw new NotImplementedException();
+        }
+
+        //public string Login(string username, string password)
+        //{
+        //    return repo.Login(username, password);
+        //}
+
+        //public String RegisterUser(User user)
+        //{
+        //    return "posted";
+        //    // return repo.RegisterUser(username, password, nickname);
+        //}
+        //public string DisableUser(string username)
+        //{
+        //    return repo.DisableUser(username);
+        //}
+        //public string EnableUser(string username)
+        //{
+        //    return repo.EnableUser(username);
+        //}
+        //public string DeleteUser(string username)
+        //{
+        //    return repo.DeleteUser(username);
+        //}
+        //public IEnumerable<User> GetAllUsers()
+        //{
+        //    return repo.GetAllUsers();
+        //}
+
+        //public Task<User> GetUser(string userid)
+        //{
+        //    if (userid != null)
+        //        return repo.GetUser(userid);
+        //    else
+        //    throw new NotImplementedException();
+        //}
 
         public Test TestUser(Test test)
         {

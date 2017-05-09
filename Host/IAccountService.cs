@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EvilCorp.SlackStorage.AccountService.Data.DomainEntities;
+using System;
 using System.Collections.Generic;
 using System.ServiceModel;
 using System.Threading.Tasks;

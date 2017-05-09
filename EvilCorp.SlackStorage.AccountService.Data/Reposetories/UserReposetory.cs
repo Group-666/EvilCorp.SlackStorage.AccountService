@@ -2,109 +2,55 @@
 using EvilCorp.AccountService.ClientEntities;
 using EvilCorp.AccountService.ServiceProvider;
 using EvilCorp.ReltFulXmlAccountService;
+using EvilCorp.SlackStorage.AccountService.Data.Reposetories_Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EvilCorp.SlackStorage.AccountService.Data.DomainEntities;
+using System.Data.Entity;
 
 namespace EvilCorp.SlackStorage.AccountService.Data.Reposetories
 {
-    public class UserReposetory : UserContrect
+    public class UserReposetory : IUserReposetory
     {
         AccountDBContext context = new AccountDBContext();
         Logger _loger = new Logger();
-        public string DeleteUser(string username)
+
+        public async Task<Account> Create(Account account)
         {
-            var user = context.Users.Where(x => x.UserName == username).FirstOrDefault();
-            if (user != null)
-            {
-                user.CreateDeletedDate();
-                user.IsDeleted = true;
-                context.SaveChanges();
-                _loger.Log("Deleted user with id" + user.UserId.ToString(), LogLevel.Information);
-                return user.UserId.ToString();
-            }
-            else
-            {
-                return "This is some Problem with deleteing User";
-            }
+          var acc = context.Accounts.Add(account);
+            await context.SaveChangesAsync();
+            return acc;
         }
 
-        public string DisableUser(string username)
+        public async Task Delete(Guid id)
         {
-            var user = context.Users.Where(x => x.UserName == username).FirstOrDefault();
-            if (user != null)
-            {
-                user.DisableUser();
-                context.SaveChanges();
-                _loger.Log("Disabled user with id" + user.UserId.ToString(), LogLevel.Warning);
-                return user.UserId.ToString();
-            }
-            else
-            {
-                return "This is some Problem with Disableing User";
-            }
+            var user = await context.Accounts.FindAsync(id);
+            context.Accounts.Remove(user);
+            Save();
         }
 
-        public string EnableUser(string username)
+        public async Task<Account> Get(Guid id)
         {
-            var user = context.Users.Where(x => x.UserName == username).FirstOrDefault();
-            if (user != null)
-            {
-                user.EnableUser();
-                context.SaveChanges();
-                _loger.Log("Enabled user with id" + user.UserId.ToString(), LogLevel.Warning);
-                return user.UserId.ToString();
-            }
-            else
-            {
-                return "This is some Problem with Enableing User";
-            }
+            return await context.Accounts.FindAsync(id);
+
         }
 
-        public IEnumerable<EvilCorp.AccountService.ClientEntities.User> GetAllUsers()
+        public async Task<IEnumerable<Account>> GetAll()
         {
-            return context.Users;
+            return context.Accounts.ToList();
         }
 
-        public async Task<User>  GetUser(string userid)
+        public async Task Update(Account account)
         {
-            if (userid != null)
-                return  await context.Users.FindAsync(userid);
-            else
-                throw new Exception("User not Found");
+            context.Entry(account).State = EntityState.Modified;
         }
 
-        public string Login(string userid, string password)
+        private async void Save()
         {
-            var user = context.Users.Where(x => x.UserId.ToString() == userid).FirstOrDefault();
-            if (user != null)
-            {
-                _loger.Log("LogedIn user with id" + user.UserId.ToString(), LogLevel.Information);
-                return  (user.UserId.ToString() == userid && user.Password == password) ? user.UserId.ToString() : "user not found";
-            }
-            return "User or password is not in database";
-        }
-
-        public string RegisterUser(User user)
-        {
-            //var user = new User() {NickName = nickname, UserName = username, Password = password };
-
-            //var saveduser = context.Users.Add(user);
-            //context.SaveChanges();
-            //if (saveduser.UserId != null)
-            //{
-            //    _loger.Log("Registerd user with id" + user.UserId.ToString(), LogLevel.Information);
-            //    return saveduser.UserId.ToString();
-            //}
-            //else { return " User is Not Created"; }
-            return "user";
-        }
-
-        public Test TestUser(Test test)
-        {
-            throw new NotImplementedException();
+            int x  = await context.SaveChangesAsync();
         }
     }
 }

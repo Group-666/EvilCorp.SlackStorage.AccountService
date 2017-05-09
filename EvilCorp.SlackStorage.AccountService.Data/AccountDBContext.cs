@@ -1,5 +1,6 @@
 ﻿
 using EvilCorp.AccountService.ClientEntities;
+using EvilCorp.SlackStorage.AccountService.Data.DomainEntities;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -11,9 +12,11 @@ namespace EvilCorp.SlackStorage.AccountService.Data
 {
     public class AccountDBContext : DbContext
     {
-        public AccountDBContext() : base("name = AccountDBContext")
+        public AccountDBContext() : base("AccountDBContext")
         {
         }
         public DbSet<User> Users {get; set;}
+
+        public DbSet<Account> Accounts { get; set; }
     }
 }
