@@ -11,8 +11,8 @@ namespace Host
         private static void Main()
         {
             var baseAddress = "http://localhost:8009/AccountService";
-           // StandardKernel _Kernal = new StandardKernel();
-            //_Kernal.Load(Assembly.GetExecutingAssembly());
+            StandardKernel _Kernal = new StandardKernel();
+            _Kernal.Load(Assembly.GetExecutingAssembly());
             
 
 

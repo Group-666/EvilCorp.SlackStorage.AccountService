@@ -14,7 +14,10 @@ namespace Host
         {
             _userrepo = userreposetory;
         }
-
+        public AccountManager()
+        {
+            
+        }
         public async Task<IEnumerable<Account>> GetAll()
         {
            return await _userrepo.GetAll();
