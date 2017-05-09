@@ -11,15 +11,20 @@ namespace EvilCorp.SlackStorage.AccountService.Data
 {
     public class Logger
     {
-        LoggerRepository logrepo = new LoggerRepository();
+        
         private readonly string componentName = "AccoutService";
+        private ILogger _loger;
+        public Logger(ILogger loger)
+        {
+            _loger = loger;
+        }
         public void Log(string message, LogLevel logLevel)
         {
             if (string.IsNullOrEmpty(message))
                 throw new ArgumentException("The message cannot be null or empty.", nameof(message));
 
             var logEntry = CreateContent(message, logLevel);
-               // logrepo.Log(logEntry);
+               _loger.Log(logEntry);
         }
 
 

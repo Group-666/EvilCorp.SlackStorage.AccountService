@@ -67,6 +67,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\EvilCorp.AccountService.ServiceProvider\EvilCorp.AccountService.ServiceProvider.csproj">
+      <Project>{8A98E809-0091-4FFB-B33B-2DCDC81A8C79}</Project>
+      <Name>EvilCorp.AccountService.ServiceProvider</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EvilCorp.SlackStorage.AccountService.Data\EvilCorp.SlackStorage.AccountService.Data.csproj">
       <Project>{d2954002-a347-48d3-b944-17464539c2ac}</Project>
       <Name>EvilCorp.SlackStorage.AccountService.Data</Name>

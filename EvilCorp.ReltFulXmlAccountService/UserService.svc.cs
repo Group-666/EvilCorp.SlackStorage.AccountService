@@ -12,44 +12,44 @@ namespace EvilCorp.ReltFulXmlAccountService
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "UserService" in code, svc and config file together.
     // NOTE: In order to launch WCF Test Client for testing this service, please select UserService.svc or UserService.svc.cs at the Solution Explorer and start debugging.
-    public class UserService : UserContrect
+    public class UserService 
     {
-        UserReposetory repo = new UserReposetory();
+        //UserReposetory repo = new UserReposetory();
 
-        public string DeleteUser(string username)
-        {
-            throw new NotImplementedException();
-        }
+        //public string DeleteUser(string username)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        public string DisableUser(string username)
-        {
-            throw new NotImplementedException();
-        }
+        //public string DisableUser(string username)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        public string EnableUser(string username)
-        {
-            throw new NotImplementedException();
-        }
+        //public string EnableUser(string username)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        public IEnumerable<User> GetAllUsers()
-        {
-            throw new NotImplementedException();
-        }
+        //public IEnumerable<User> GetAllUsers()
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        public Task<User> GetUser(string userid)
-        {
-            throw new NotImplementedException();
-        }
+        //public Task<User> GetUser(string userid)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        public string Login(string userid, string password)
-        {
-            throw new NotImplementedException();
-        }
+        //public string Login(string userid, string password)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        public string RegisterUser(User user)
-        {
-            throw new NotImplementedException();
-        }
+        //public string RegisterUser(User user)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         //public string Login(string username, string password)
         //{
@@ -86,9 +86,9 @@ namespace EvilCorp.ReltFulXmlAccountService
         //    throw new NotImplementedException();
         //}
 
-        public Test TestUser(Test test)
-        {
-            return  new Test { Name = test.Name, age = test.age};
-        }
+        //public Test TestUser(Test test)
+        //{
+        //    return  new Test { Name = test.Name, age = test.age};
+        //}
     }
 }
