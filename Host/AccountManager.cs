@@ -1,5 +1,6 @@
 ﻿using EvilCorp.AccountService;
-using EvilCorp.SlackStorage.AccountService.Data.DomainEntities;
+using EvilCorp.SlackStorage.AccountService.Data;
+using EvilCorp.SlackStorage.AccountService.Data.Reposetories;
 using EvilCorp.SlackStorage.AccountService.Data.Reposetories_Interfaces;
 using System;
 using System.Collections.Generic;
@@ -10,13 +11,14 @@ namespace Host
     public class AccountManager : IAccountService
     {
         private IUserReposetory _userrepo;
+        
         public AccountManager(IUserReposetory userreposetory)
         {
             _userrepo = userreposetory;
         }
         public AccountManager()
         {
-            
+            _userrepo = new UserReposetory(new Logger());
         }
         public async Task<IEnumerable<Account>> GetAll()
         {

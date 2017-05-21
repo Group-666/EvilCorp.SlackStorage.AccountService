@@ -1,12 +1,4 @@
 ﻿
-using EvilCorp.AccountService.Contracts;
-using EvilCorp.SlackStorage.AccountService.Data.Reposetories;
-using EvilCorp.SlackStorage.AccountService.Data.Reposetories_Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EvilCorp.SlackStorage.AccountService.Service
 {

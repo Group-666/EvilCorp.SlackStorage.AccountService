@@ -88,10 +88,6 @@
       <Project>{F6DD6958-DCA2-4370-9109-1BB7EAB5005B}</Project>
       <Name>EvilCorp.SlackStorage.AccountService.Service</Name>
     </ProjectReference>
-    <ProjectReference Include="..\EvilCorp.AccountService.Contracts\EvilCorp.AccountService.Contracts.csproj">
-      <Project>{CDEAF354-A069-44AD-9733-6B2AFF1E4646}</Project>
-      <Name>EvilCorp.AccountService.Contracts</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

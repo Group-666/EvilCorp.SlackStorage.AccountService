@@ -1,9 +1,5 @@
-﻿using System;
+﻿
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Moq;
-using EvilCorp.SlackStorage.AccountService.Data.Reposetories_Interfaces;
-using EvilCorp.SlackStorage.AccountService.Service;
-using EvilCorp.AccountService.Contracts;
 
 namespace EvilCorp.SlackStroage.AccountService.Utest
 {

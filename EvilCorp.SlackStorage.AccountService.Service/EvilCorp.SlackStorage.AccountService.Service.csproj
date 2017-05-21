@@ -37,14 +37,17 @@
       <HintPath>..\AccountService\packages\Autofac.Extensions.DependencyInjection.4.0.0\lib\netstandard1.1\Autofac.Extensions.DependencyInjection.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Documents\nopCommerce_3.90_Source\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.dll</HintPath>
+      <HintPath>..\AccountService\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\AccountService\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\AccountService\packages\Microsoft.Extensions.DependencyInjection.Abstractions.1.0.0\lib\netstandard1.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.Numerics" />
@@ -63,10 +66,6 @@
     <Compile Include="UserManager.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AccountService\EvilCorp.AccountService.Contracts\EvilCorp.AccountService.Contracts.csproj">
-      <Project>{CDEAF354-A069-44AD-9733-6B2AFF1E4646}</Project>
-      <Name>EvilCorp.AccountService.Contracts</Name>
-    </ProjectReference>
     <ProjectReference Include="..\EvilCorp.SlackStorage.AccountService.Data\EvilCorp.SlackStorage.AccountService.Data.csproj">
       <Project>{D2954002-A347-48D3-B944-17464539C2AC}</Project>
       <Name>EvilCorp.SlackStorage.AccountService.Data</Name>

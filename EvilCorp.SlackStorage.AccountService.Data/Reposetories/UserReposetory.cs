@@ -1,15 +1,11 @@
-﻿
-using EvilCorp.AccountService.ClientEntities;
-using EvilCorp.AccountService.ServiceProvider;
-using EvilCorp.ReltFulXmlAccountService;
-using EvilCorp.SlackStorage.AccountService.Data.Reposetories_Interfaces;
+﻿using EvilCorp.SlackStorage.AccountService.Data.Reposetories_Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using EvilCorp.SlackStorage.AccountService.Data.DomainEntities;
 using System.Data.Entity;
+using EvilCorp.AccountService;
 
 namespace EvilCorp.SlackStorage.AccountService.Data.Reposetories
 {
@@ -25,7 +21,7 @@ namespace EvilCorp.SlackStorage.AccountService.Data.Reposetories
         {
           var acc = context.Accounts.Add(account);
             await context.SaveChangesAsync();
-            _loger.Log("success", LogLevel.Information);
+           // _loger.Log("success", LogLevel.Information);
             return acc;
         }
 
@@ -34,32 +30,32 @@ namespace EvilCorp.SlackStorage.AccountService.Data.Reposetories
             var user = await context.Accounts.FindAsync(id);
             context.Accounts.Remove(user);
             Save();
-            _loger.Log("Deleted", LogLevel.Warning);
+           // _loger.Log("Deleted", LogLevel.Warning);
         }
 
         public async Task Delete(Account account)
         {
             context.Accounts.Remove(account);
             Save();
-            _loger.Log("Deleted", LogLevel.Warning);
+           // _loger.Log("Deleted", LogLevel.Warning);
         }
 
         public async Task<Account> Get(Guid id)
         {
             
-            _loger.Log("Get", LogLevel.Information);
+            //_loger.Log("Get", LogLevel.Information);
             return await context.Accounts.FindAsync(id);
         }
 
         public async Task<IEnumerable<Account>> GetAll()
         {
-            _loger.Log("GetAll", LogLevel.Information);
+           // _loger.Log("GetAll", LogLevel.Information);
             return context.Accounts.ToList();
         }
 
         public async Task Update(Account account)
         {
-            _loger.Log("Update", LogLevel.Information);
+          //  _loger.Log("Update", LogLevel.Information);
             context.Entry(account).State = EntityState.Modified;
         }
 

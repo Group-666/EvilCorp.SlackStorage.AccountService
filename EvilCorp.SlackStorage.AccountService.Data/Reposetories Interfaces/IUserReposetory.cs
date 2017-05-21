@@ -1,9 +1,6 @@
-﻿using EvilCorp.AccountService.ClientEntities;
-using EvilCorp.SlackStorage.AccountService.Data.DomainEntities;
+﻿using EvilCorp.AccountService;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace EvilCorp.SlackStorage.AccountService.Data.Reposetories_Interfaces

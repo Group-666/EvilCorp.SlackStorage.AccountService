@@ -71,9 +71,9 @@
     <Compile Include="AccountDBContext.cs" />
     <Compile Include="DomainEntities\Account.cs" />
     <Compile Include="Logger.cs" />
-    <Compile Include="Migrations\201705091646489_Account.cs" />
-    <Compile Include="Migrations\201705091646489_Account.Designer.cs">
-      <DependentUpon>201705091646489_Account.cs</DependentUpon>
+    <Compile Include="Migrations\201705211929596_FirstMig.cs" />
+    <Compile Include="Migrations\201705211929596_FirstMig.Designer.cs">
+      <DependentUpon>201705211929596_FirstMig.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -83,24 +83,14 @@
     <Compile Include="UserHelper.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AccountService\EvilCorp.AccountService.ClientEntities\EvilCorp.AccountService.ClientEntities.csproj">
-      <Project>{3B327FF6-9AFC-484A-80BE-285DF87BB017}</Project>
-      <Name>EvilCorp.AccountService.ClientEntities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EvilCorp.AccountService.ServiceProvider\EvilCorp.AccountService.ServiceProvider.csproj">
-      <Project>{8a98e809-0091-4ffb-b33b-2dcdc81a8c79}</Project>
-      <Name>EvilCorp.AccountService.ServiceProvider</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201705091646489_Account.resx">
-      <DependentUpon>201705091646489_Account.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201705211929596_FirstMig.resx">
+      <DependentUpon>201705211929596_FirstMig.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

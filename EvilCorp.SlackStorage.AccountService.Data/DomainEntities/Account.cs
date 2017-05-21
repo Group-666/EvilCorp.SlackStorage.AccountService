@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EvilCorp.SlackStorage.AccountService.Data.DomainEntities
+namespace EvilCorp.AccountService
 {
     [DataContract]
     public class Account
