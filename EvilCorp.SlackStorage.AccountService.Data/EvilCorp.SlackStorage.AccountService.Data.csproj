@@ -94,4 +94,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>attrib -r "$(ProjectDir)Web.Config"</PostBuildEvent>
+  </PropertyGroup>
 </Project>
