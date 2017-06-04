@@ -10,6 +10,8 @@ namespace Host
     {
         private static void Main()
         {
+
+           
             var baseAddress = "http://localhost:8009/AccountService";
             StandardKernel _Kernal = new StandardKernel();
             _Kernal.Load(Assembly.GetExecutingAssembly());
@@ -20,8 +22,9 @@ namespace Host
             var hostAccountManager = new ServiceHost(typeof(AccountManager), new Uri(baseAddress));
 
             hostAccountManager.Open();
-
+            
             Console.WriteLine("Services started. Press [Enter] to exit.");
+            Console.WriteLine(hostAccountManager.State);
             Console.ReadLine();
 
             hostAccountManager.Close();
