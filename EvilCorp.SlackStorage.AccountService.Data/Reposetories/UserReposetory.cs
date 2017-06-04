@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
 using EvilCorp.AccountService;
+using System.ServiceModel;
 
 namespace EvilCorp.SlackStorage.AccountService.Data.Reposetories
 {
@@ -42,9 +43,18 @@ namespace EvilCorp.SlackStorage.AccountService.Data.Reposetories
 
         public async Task<Account> Get(Guid id)
         {
+            try
+            {
+                //_loger.Log("Get", LogLevel.Information);
+                return await context.Accounts.FindAsync(id);
+            }
+            catch (Exception ex)
+            {
+
+                throw new FaultException(ex.Message);
+            }
             
-            //_loger.Log("Get", LogLevel.Information);
-            return await context.Accounts.FindAsync(id);
+            
         }
 
         public async Task<IEnumerable<Account>> GetAll()
