@@ -4,6 +4,7 @@ using EvilCorp.SlackStorage.AccountService.Data.Reposetories;
 using EvilCorp.SlackStorage.AccountService.Data.Reposetories_Interfaces;
 using System;
 using System.Collections.Generic;
+using System.ServiceModel;
 using System.Threading.Tasks;
 
 namespace Host
@@ -42,7 +43,16 @@ namespace Host
 
         public async Task<Account> Get(Guid id)
         {
-            return await _userrepo.Get(id);
+            try
+            {
+                return await _userrepo.Get(id);
+            }
+            catch (Exception ex)
+            {
+
+                throw new FaultException(ex.Message);
+            }
+           
         }
 
         public async Task Update(Account account)
